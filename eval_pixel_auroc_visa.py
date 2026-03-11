@@ -120,7 +120,7 @@ def run_category(model, data_root, category, max_ref=69):
                 up = F.interpolate(t, size=(IMG_SIZE,IMG_SIZE), mode='bilinear', align_corners=False)
                 sm = up.squeeze().numpy().flatten()
                 mk = Image.open(m).convert('L').resize((IMG_SIZE,IMG_SIZE))
-                ma = (np.array(mk) > 127).astype(int).flatten()
+                ma = (np.array(mk) > 0).astype(int).flatten()
                 if ma.sum() > 0:
                     all_s.append(sm); all_l.append(ma)
             except: pass
