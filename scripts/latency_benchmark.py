@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from models.retrivad import RetriVAD
 from benchmark import image_files
 
-UNIVAD_LATENCY_S = 900.0
+UNIVAD_LATENCY_S = 975.0
 
 
 def measure_latency(model, test_paths, n_warmup=2):
