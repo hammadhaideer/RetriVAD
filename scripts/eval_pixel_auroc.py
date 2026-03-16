@@ -4,6 +4,7 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image
+import warnings
 from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -40,7 +41,7 @@ def eval_pixel_loco(data_root, category, max_ref=69, device="cpu"):
                 gt_maps.append(mask)
 
     if not pred_maps:
-        print(f"  [!] No valid mask pairs for {category}")
+        warnings.warn(f"No valid mask pairs found for {category}")
         return None
 
     pix_auc = pixel_auroc(gt_maps, pred_maps)
@@ -107,7 +108,7 @@ def main():
 
     if aucs:
         print(f"\n  Mean pixel-AUC : {np.mean(aucs):.2f}%")
-        print(f"  UniVAD         : 75.1% (LOCO) / 96.5% (MVTec)")
+        
 
 
 if __name__ == "__main__":
