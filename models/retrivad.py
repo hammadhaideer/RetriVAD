@@ -4,6 +4,7 @@ import faiss
 import numpy as np
 import torch
 from PIL import Image
+import warnings
 from tqdm import tqdm
 
 _MEAN = np.array([0.485, 0.456, 0.406], dtype=np.float32)
@@ -44,7 +45,7 @@ class DINOv2Encoder:
             try:
                 feats.append(self.encode(Image.open(p)))
             except Exception as e:
-                print(f"  [warn] {p}: {e}")
+                warnings.warn(str(e))
         return (
             np.stack(feats).astype(np.float32)
             if feats else np.empty((0, DIM), np.float32)
@@ -83,7 +84,7 @@ class RetriVAD:
         d, _ = self.index.search(v, self.k)
         return float(np.mean(d[0]))
 
-    def anomaly_map(self, img_or_path, patch_grid=14):
+    def anomaly_map(self, img_or_path, patch_grid=16):
         if isinstance(img_or_path, (str, Path)):
             img = Image.open(img_or_path).convert("RGB")
         else:
