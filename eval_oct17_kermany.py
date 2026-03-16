@@ -9,7 +9,6 @@ from sklearn.metrics import roc_auc_score
 sys.path.insert(0, str(Path(__file__).parent))
 from models.retrivad import RetriVAD
 
-UNIVAD          = 82.1
 ANOMALY_CLASSES = ["CNV", "DME", "DRUSEN"]
 
 
@@ -67,15 +66,12 @@ def main():
 
     print(f"\nN={labels.count(0)}  A={labels.count(1)}")
     print(f"OCT17 img-AUC = {auc:.2f}%")
-    print(f"UniVAD        = {UNIVAD}%")
-    print(f"Gap           = {auc - UNIVAD:+.2f}%")
+
     print(f"Latency       = {latency:.3f}s/image")
 
     result = {
         "dataset":       "OCT17_Kermany",
         "image_auroc":   round(auc, 2),
-        "univad_auroc":  UNIVAD,
-        "gap":           round(auc - UNIVAD, 2),
         "latency_s":     round(latency, 4),
         "n_normal_test": len(test_normal),
         "n_anomaly":     len(test_anomaly),
