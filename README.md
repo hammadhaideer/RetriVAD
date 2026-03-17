@@ -16,7 +16,7 @@ Pixel-level localisation requires 256 sequential DINOv2 forward passes, one per 
 
 ### Image-Level AUROC (1-shot setting)
 
-All methods evaluated on the same 7 datasets. UniVAD mean is recalculated on these 7 datasets from the per-dataset results reported in their paper (Gu et al., CVPR 2025).
+All methods evaluated on the same 7 datasets.
 
 | Dataset | PatchCore | WinCLIP | AnomalyGPT | UniAD | MedCLIP | UniVAD | RetriVAD |
 |---------|-----------|---------|------------|-------|---------|--------|----------|
