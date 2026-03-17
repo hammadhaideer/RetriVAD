@@ -27,7 +27,7 @@ All methods evaluated on the same 7 datasets.
 | RESC | 56.3 | 72.9 | 82.4 | 53.5 | 66.9 | 85.5 | 76.53 |
 | ChestXray | 66.4 | 70.2 | 68.5 | 60.6 | 71.4 | 72.2 | **86.79** |
 | OCT17 Kermany | 59.9 | 79.7 | 77.5 | 44.4 | 64.6 | 82.1 | 74.67 |
-| **Mean (7 datasets)** | 68.1 | 73.3 | 77.6 | 55.9 | 67.4 | 83.2 | **82.1** |
+| **Mean** | 68.1 | 73.3 | 77.6 | 55.9 | 67.4 | 83.2 | **82.1** |
 
 VisA results use the official CSV split protocol.
 
