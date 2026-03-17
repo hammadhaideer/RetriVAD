@@ -205,6 +205,8 @@ Output is saved to `figures/fig_qualitative.png`.
 
 ```
 RetriVAD/
+├── README.md
+├── requirements.txt
 ├── benchmark.py
 ├── generate_heatmaps.py
 ├── ablation_features.py
