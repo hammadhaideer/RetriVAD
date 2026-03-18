@@ -40,6 +40,8 @@ VisA results use the official CSV split protocol.
 | MVTec-AD (15 categories) | 71.27 |
 | MVTec LOCO (5 categories) | 56.21 |
 
+Pixel-level evaluation is reported on datasets with ground-truth pixel masks only.
+
 ---
 
 ## Environment Setup
